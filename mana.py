@@ -1,7 +1,7 @@
 class Mana(object):
-	
+
 	def __init__(self, mana):
-		self.mana = mana	
+		self.mana = mana
 
 	def setMana(self,mana):
 		self.mana = mana

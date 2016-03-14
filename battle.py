@@ -10,7 +10,7 @@ class Areas(object):
 
 	def battleArena(self):
 		print "The monster is a " + self.monster.getMonsterKind() + " and his HP/Mana is " + str(self.monster.getHp()) + "/" + str(self.monster.getMana()) + "!"
-		if self.monster.getMonsterKind() == "Ogre": 
+		if self.monster.getMonsterKind() == "Ogre":
 			self.art.ogre()
 		elif self.monster.getMonsterKind() == "Imp":
 			self.art.imp()
