@@ -1,21 +1,21 @@
 import random
 import art
+import game
 
 class Areas(object):
 
-	def __init__(self, monster, player, art):
+	def __init__(self, monster, player):
 		self.monster = monster
 		self.player = player
-		self.art = art
 
 	def battleArena(self):
 		print "The monster is a " + self.monster.getMonsterKind() + " and his HP/Mana is " + str(self.monster.getHp()) + "/" + str(self.monster.getMana()) + "!"
 		if self.monster.getMonsterKind() == "Ogre":
-			self.art.ogre()
+			art.ogre()
 		elif self.monster.getMonsterKind() == "Imp":
-			self.art.imp()
+			art.imp()
 		else:
-			self.art.skeleton()
+			art.skeleton()
 		print "***********************"
 		print "You have " + str(self.player.getHp()) + " HP and " + str(self.player.getMana()) + " mana!"
 		monsterBattleHp = self.monster.getHp()
@@ -41,7 +41,7 @@ class Areas(object):
 				if roll == 10:
 					print "Oh shit you made it!"
 				else:
-					self.gameover()
+					game.gameover()
 			else:
 				print "You fumble and missed your move!"
 			if monsterBattleHp <= 0:
@@ -60,6 +60,3 @@ class Areas(object):
 					print "You got punch in the face. You took " + str(monsterDamage) + " damage and have " + str(playerBattleHp) + " hp left!"
 				if playerBattleHp <= 0:
 					self.gameover()
-
-	def gameover(self):
-		print "You are dead. You didn't save the world from what ever you tried to save it from!"

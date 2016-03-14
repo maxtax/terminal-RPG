@@ -2,7 +2,7 @@ from hero import Hero
 from potions import Potions
 from monsters import Monsters
 from battle import Areas
-from art import Art
+import art
 from nature import Nature
 import random
 
@@ -11,7 +11,6 @@ class GameController(object):
 	def __init__(self):
 		self.player = None
 		self.monster = None
-		self.art = Art()
 		self.nature = Nature(0)
 		self.steps = 0
 
@@ -37,7 +36,7 @@ class GameController(object):
 			elif nextMove == str(2):
 				self.look(self.steps)
 			elif nextMove == str(3):
-				self.sleep()
+				sleep()
 			elif nextMove == str(4):
 				print "Your HP is " + str(self.player.getHp()) + " and your mana is " + str(self.player.getMana())+"."
 			elif nextMove == str(5):
@@ -80,7 +79,7 @@ class GameController(object):
 				print "You find a health potion!"
 				newHp = self.potions.healingPotion(10, self.player.getHp())
 				self.player.setHp(newHp)
-				self.art.bottleHealth()
+				art.bottleHealth()
 				print "***********************"
 				print "Your new HP is: " + str(self.player.getHp())
 				print "***********************"
@@ -88,7 +87,7 @@ class GameController(object):
 				print "You find a mana potion!"
 				newMana = self.potions.manaPotion(10, self.player.getMana())
 				self.player.setMana(newMana)
-				self.art.bottleMana()
+				art.bottleMana()
 				print "***********************"
 				print "Your new mana is: " + str(self.player.getMana())
 				print "***********************"
@@ -97,7 +96,7 @@ class GameController(object):
 				print "Oh shit a MONSTER!!!!"
 				print "***********************"
 				self.createMonster()
-				fight = Areas(self.monster,self.player,self.art)
+				fight = Areas(self.monster,self.player)
 				fight.battleArena()
 			elif 7 <= roll <= 10:
 				print "***********************"
@@ -106,9 +105,6 @@ class GameController(object):
 
 	def look(self, steps):
 		self.nature.generateSurrondings(steps)
-
-	def sleep(self):
-		print "When you sleep you get back 100 hp. To bad this part of the game only can be accessed with microtransaction and that part isnt implemented yet..."
 
 	def createMonster(self):
 		monsterRoll = random.randint(1,3)
@@ -125,6 +121,12 @@ class GameController(object):
 			hp = 40
 			mana = 100
 		self.monster = Monsters(monsterKind,hp,mana)
+
+def gameover():
+	print "You are dead. You didn't save the world from what ever you tried to save it from!"
+
+def sleep(self):
+	print "When you sleep you get back 100 hp. To bad this part of the game only can be accessed with microtransaction and that part isnt implemented yet..."
 
 game = GameController()
 game.intro()
