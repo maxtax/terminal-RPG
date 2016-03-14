@@ -102,9 +102,6 @@ class GameController(object):
 				print "Nothing happen!"
 				print "***********************"
 
-	def look(self, steps):
-		nature.generateSurrondings(steps)
-
 	def createMonster(self):
 		monsterRoll = random.randint(1,3)
 		if monsterRoll == 1:
@@ -121,7 +118,10 @@ class GameController(object):
 			mana = 100
 		self.monster = Monsters(monsterKind,hp,mana)
 
-def sleep(self):
+def look(steps):
+		nature.generateSurrondings(steps)
+
+def sleep():
 	print "When you sleep you get back 100 hp. To bad this part of the game only can be accessed with microtransaction and that part isnt implemented yet..."
 
 game = GameController()
