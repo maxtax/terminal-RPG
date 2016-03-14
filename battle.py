@@ -1,6 +1,5 @@
 import random
 import art
-import game
 
 class Areas(object):
 
@@ -40,8 +39,10 @@ class Areas(object):
 				roll = random.randint(1,10)
 				if roll == 10:
 					print "Oh shit you made it!"
+					break
 				else:
-					game.gameover()
+					gameover()
+					break
 			else:
 				print "You fumble and missed your move!"
 			if monsterBattleHp <= 0:
@@ -53,10 +54,16 @@ class Areas(object):
 				break
 			else:
 				monsterDamage = random.randint(1,10)
-				if damage == str(1):
+				if monsterDamage == str(1):
 					print "You parry his blow! Good job!"
 				else:
 					playerBattleHp = playerBattleHp - monsterDamage
 					print "You got punch in the face. You took " + str(monsterDamage) + " damage and have " + str(playerBattleHp) + " hp left!"
 				if playerBattleHp <= 0:
-					self.gameover()
+					gameover()
+					break
+
+def gameover():
+	print "You are dead. You didn't save the world from what ever you tried to save it from!"
+	exit()
+

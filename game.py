@@ -2,8 +2,8 @@ from hero import Hero
 from potions import Potions
 from monsters import Monsters
 from battle import Areas
+import nature
 import art
-from nature import Nature
 import random
 
 class GameController(object):
@@ -11,7 +11,6 @@ class GameController(object):
 	def __init__(self):
 		self.player = None
 		self.monster = None
-		self.nature = Nature(0)
 		self.steps = 0
 
 	def intro(self):
@@ -36,7 +35,7 @@ class GameController(object):
 			elif nextMove == str(2):
 				self.look(self.steps)
 			elif nextMove == str(3):
-				sleep()
+				selfsleep()
 			elif nextMove == str(4):
 				print "Your HP is " + str(self.player.getHp()) + " and your mana is " + str(self.player.getMana())+"."
 			elif nextMove == str(5):
@@ -104,7 +103,7 @@ class GameController(object):
 				print "***********************"
 
 	def look(self, steps):
-		self.nature.generateSurrondings(steps)
+		nature.generateSurrondings(steps)
 
 	def createMonster(self):
 		monsterRoll = random.randint(1,3)
@@ -121,9 +120,6 @@ class GameController(object):
 			hp = 40
 			mana = 100
 		self.monster = Monsters(monsterKind,hp,mana)
-
-def gameover():
-	print "You are dead. You didn't save the world from what ever you tried to save it from!"
 
 def sleep(self):
 	print "When you sleep you get back 100 hp. To bad this part of the game only can be accessed with microtransaction and that part isnt implemented yet..."
