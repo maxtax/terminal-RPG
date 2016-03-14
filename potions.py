@@ -1,5 +1,3 @@
-from hero import Hero
-
 class Potions(object):
 	def __init__(self, newHp):
 		self.newHp = newHp

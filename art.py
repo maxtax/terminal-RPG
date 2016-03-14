@@ -8,7 +8,7 @@ class Art(object):
 
 
     def bottleHealth(self):
-        print """
+        return """
           (___)
           <   >
            ) (
@@ -23,7 +23,7 @@ class Art(object):
 
 
     def bottleMana(self):
-        print """
+        return """
           (___)
           <   >
            ) (
@@ -37,7 +37,7 @@ class Art(object):
          `.___.' Mana """
 
     def ogre(self):
-        print """
+        return """
                __,='`````'=/__
               '//  (o) \(o) \ `'         _,-,
               //|     ,_)   (`\      ,-'`_,-\+
@@ -59,7 +59,7 @@ class Art(object):
             ooOO(_)    (_)OOoo """
 
     def skeleton(self):
-        print """
+        return """
                      _.----._
            .'             '.
           /                 \+
@@ -85,7 +85,7 @@ class Art(object):
                   q__p """
 
     def mountain(self):
-        print """
+        return """
                                       .-.      / \        _
                     ^^         /   \    /^./\__   _/ \+
                   _        .--'\/\_ \__/.      \ /    \  ^^  ___
@@ -105,7 +105,7 @@ class Art(object):
 
 
     def town(self):
-        print """
+        return """
 
           ~         ~~          __
                _T      .,,.    ~--~ ^^
@@ -121,7 +121,7 @@ class Art(object):
           """
 
     def sea(self):
-        print """
+        return """
                                          |
                              \       /
                                .-"-.
@@ -133,7 +133,7 @@ class Art(object):
          """
 
     def forest(self):
-        print """
+        return """
              ^  ^  ^   ^      ___I_      ^  ^   ^  ^  ^   ^  ^
           /|\/|\/|\ /|\    /\-_--\    /|\/|\ /|\/|\/|\ /|\/|\+
           /|\/|\/|\ /|\   /  \_-__\   /|\/|\ /|\/|\/|\ /|\/|\+
@@ -141,7 +141,7 @@ class Art(object):
             """
 
     def imp(self):
-        print """
+        return """
        ,  .   (          )          -.\ |
        | / .- |\        /|         _  \+'/
         \+'/   | \.-""-./ |          \_) ;-'

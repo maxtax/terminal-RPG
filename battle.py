@@ -1,5 +1,5 @@
 import random
-from art import Art
+import art
 
 class Areas(object):
 
@@ -60,8 +60,6 @@ class Areas(object):
 					print "You got punch in the face. You took " + str(monsterDamage) + " damage and have " + str(playerBattleHp) + " hp left!"
 				if playerBattleHp <= 0:
 					self.gameover()
-				else:
-					"Next turn!"
 
 	def gameover(self):
 		print "You are dead. You didn't save the world from what ever you tried to save it from!"
